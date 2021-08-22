@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public GameObject PlayerBulletGO;
+    public GameObject BulletPosition01;
+    public GameObject BulletPosition02 ;
     public float speed;
 
     private void Start()
@@ -17,6 +20,15 @@ public class PlayerControl : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space)) //fire bullet
+        {
+            //Instantiate and start first bullet position
+            GameObject bullet01 = (GameObject)Instantiate(PlayerBulletGO);
+            bullet01.transform.position = BulletPosition01.transform.position;
+            //Instantiate and start second bullet position
+            GameObject bullet02 = (GameObject)Instantiate(PlayerBulletGO);
+            bullet02.transform.position = BulletPosition02.transform.position;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
