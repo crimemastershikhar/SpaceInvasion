@@ -20,6 +20,7 @@ public class PlayerControl : MonoBehaviour
         Lives = MaxLives;
         LivesUIText.text = Lives.ToString();// Update the lives UI Text
         gameObject.SetActive(true); //Set player game object to active
+        transform.position = new Vector2(0, 0);//Reset the pos to centre
     }
     private void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) //fire bullet
         {
+            gameObject.GetComponent<AudioSource>().Play();
             //Instantiate and start first bullet position
             GameObject bullet01 = (GameObject)Instantiate(PlayerBulletGO);
             bullet01.transform.position = BulletPosition01.transform.position;

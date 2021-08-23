@@ -6,9 +6,11 @@ public class EnemyControl : MonoBehaviour
 {
     float speed;
     public GameObject ExplosionGO;
+    GameObject scoreUITextGo;
     private void Start()
     {
         speed = 2f;
+        scoreUITextGo = GameObject.FindGameObjectWithTag("ScoreTextTag");   
     }
     private void Update()
     {
@@ -27,6 +29,7 @@ public class EnemyControl : MonoBehaviour
         if((col.tag == "PlayerShipTag") || (col.tag == "PlayerBulletTag"))
         {
             PlayExplosion();
+            scoreUITextGo.GetComponent<GameScore>().Score += 100;
             Destroy(gameObject);
         }
     }
