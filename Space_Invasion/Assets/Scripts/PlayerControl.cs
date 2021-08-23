@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
     public GameObject PlayerBulletGO;
+    public GameObject GameManagerGO;
     public GameObject BulletPosition01;
     public GameObject BulletPosition02 ;
     public float speed;
+    public GameObject ExplosionGO;
+    public Text LivesUIText; //Refering to live UI text
+    const int MaxLives = 3; //max player per lives
+    int Lives; //curr player lives
 
+    public void Init()
+    {
+        Lives = MaxLives;
+        LivesUIText.text = Lives.ToString();// Update the lives UI Text
+        gameObject.SetActive(true); //Set player game object to active
+    }
     private void Start()
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)); //bottom point corner of screen
@@ -44,5 +56,25 @@ public class PlayerControl : MonoBehaviour
         /*        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
                 pos.y = Mathf.Clamp(pos.y, min.y, max.y);*/
         transform.position = pos;//update player position
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if((col.tag == "EnemyShipTag") || (col.tag == "EnemyBulletTag"))
+        {
+            PlayExplosion();
+            Lives--;//Subtract one live
+            LivesUIText.text = Lives.ToString(); //Update lives UI Text
+            if(Lives == 0) // If player lives is 0
+            {
+                //changing game manager stat to gameoverstate
+                GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.GameOver);
+                gameObject.SetActive(false); //Hide instead of destroy  
+            }
+        }
+    }
+    void PlayExplosion() //Instantiate explosion effect
+    {
+        GameObject explosion = (GameObject)Instantiate(ExplosionGO);
+        explosion.transform.position = transform.position; //Set position of explosion
     }
 }
