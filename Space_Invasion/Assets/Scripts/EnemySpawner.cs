@@ -8,8 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public float maxSpawnRateInSeconds;
     private void Start()
     {
-        Invoke("SpawnEnemy", maxSpawnRateInSeconds);
-        InvokeRepeating("IncreaseSpawnRate", 0f, 50f);
     }
     void SpawnEnemy()
     {
@@ -37,6 +35,16 @@ public class EnemySpawner : MonoBehaviour
             maxSpawnRateInSeconds--;
         if (maxSpawnRateInSeconds == 1f)
             CancelInvoke("IncreaseSpawnRate");
+    }
+    public void ScheduleEnemySpawner() //startenemyspawn
+    {
+        Invoke("SpawnEnemy", maxSpawnRateInSeconds);
+        InvokeRepeating("IncreaseSpawnRate", 0f, 50f);
+    }
+    public void UnscheduleEnemySpawner()//To stop enemy from spawwning afte player dies
+    {
+        CancelInvoke("SpawnEnemy");
+        CancelInvoke("IncreaseSpawnRate");
     }
 
 }
