@@ -11,9 +11,11 @@ public class PlayerControl : MonoBehaviour
     public GameObject BulletPosition02 ;
     public float speed;
     public GameObject ExplosionGO;
+    public GameObject ExplosionPlayerGO;
     public Text LivesUIText; //Refering to live UI text
     const int MaxLives = 3; //max player per lives
     int Lives; //curr player lives
+
 
     public void Init()
     {
@@ -25,12 +27,13 @@ public class PlayerControl : MonoBehaviour
     private void Start()
     {
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)); //bottom point corner of screen
-        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)); //top right point corner of screen
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)); //top right point corner of screen
         max.x = max.x - 0.225f; //subtracting player ship half width  
         min.x = min.x + 0.225f; //add player ship half width
         max.y = max.y - 0.285f; //subtracting player ship half height  
         min.y = min.y + 0.285f; //add player ship half height
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) //fire bullet
@@ -63,7 +66,8 @@ public class PlayerControl : MonoBehaviour
     {
         if((col.tag == "EnemyShipTag") || (col.tag == "EnemyBulletTag"))
         {
-            PlayExplosion();
+            //            PlayExplosion();
+            PlayPlayerExplosion();
             Lives--;//Subtract one live
             LivesUIText.text = Lives.ToString(); //Update lives UI Text
             if(Lives == 0) // If player lives is 0
@@ -74,9 +78,14 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
-    void PlayExplosion() //Instantiate explosion effect
+/*    void PlayExplosion() //Instantiate explosion effect
     {
         GameObject explosion = (GameObject)Instantiate(ExplosionGO);
         explosion.transform.position = transform.position; //Set position of explosion
+    }*/
+    void PlayPlayerExplosion()
+    {
+        GameObject explosionplayer = (GameObject)Instantiate(ExplosionPlayerGO);
+        explosionplayer.transform.position = transform.position;
     }
 }
