@@ -55,7 +55,7 @@ public class PlayerControl : MonoBehaviour
         pos += direction * speed * Time.deltaTime; //calculate position
 
         //making sure that playe pos is not outside of screen
-        /*        pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+/*                pos.x = Mathf.Clamp(pos.x, min.x, max.x);
                 pos.y = Mathf.Clamp(pos.y, min.y, max.y);*/
         transform.position = pos;//update player position
     }
