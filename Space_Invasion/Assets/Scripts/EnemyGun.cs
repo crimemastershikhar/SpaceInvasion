@@ -10,15 +10,15 @@ public class EnemyGun : MonoBehaviour
         Invoke("FireEnemyBullet", 1f);
     }
 
-    void FireEnemyBullet() //reffrence to player's ship
+    void FireEnemyBullet() 
     {
         GameObject playerShip = GameObject.Find("PlayerGO");
         if(playerShip != null)
         {
             GameObject bullet = (GameObject)Instantiate(EnemyBulletGO);
             bullet.transform.position = transform.position;
-            Vector2 direction = playerShip.transform.position - bullet.transform.position; //compute bullet's dorection towards player ship
-            bullet.GetComponent<EnemyBullet>().SetDirection(direction); //Set bullet's direction
+            Vector2 direction = playerShip.transform.position - bullet.transform.position; 
+            bullet.GetComponent<EnemyBullet>().SetDirection(direction); 
         }
     }   
 
