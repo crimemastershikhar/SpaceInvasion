@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreUITextGO;
     public GameObject TimeCounterGO;
     public GameObject GameTitileGO;
-/*    public GameObject ShootButton; // FOR ANDROID*/
+    public GameObject ShootButton; // FOR ANDROID
 
     public enum GameManagerState
     {
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
                 playerShip.GetComponent<PlayerControl>().Init();
                 enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
                 TimeCounterGO.GetComponent<TimeCounter>().StartTimeCounter(); //Start the time counter
-/*                ShootButton.SetActive(true); // FOR ANDROID*/
+                ShootButton.SetActive(true); // FOR ANDROID
                 break;
 
             case GameManagerState.GameOver:
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
                 enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner(); //stop enemy spawner
                 Invoke("ChangeToOpeningState", 4f);//change game managr state to openign state after 4 seconds
                 TimeCounterGO.GetComponent<TimeCounter>().StopTimeCounter(); //Stop time counter
-                /*ShootButton.SetActive(false); // FOR ANDROID*/
+                ShootButton.SetActive(false); // FOR ANDROID
                 break;
         }
     }

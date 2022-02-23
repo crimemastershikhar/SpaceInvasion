@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Planet
+  - Enemy
+  - Bonus
+  - Projectile
+  - Score
+  - Health
+  - CoinsText
+  - Coin
+  - PlayerRay
+  - Rocket
+  - PlayerShipTag
+  - EnemyShipTag
+  - PlayerBulletTag
+  - EnemyBulletTag
+  - ScoreTextTag
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1947543829
+    locked: 0
+  - name: Planets
+    uniqueID: 4094135763
+    locked: 0
+  - name: Enemy
+    uniqueID: 1152134415
+    locked: 0
+  - name: Player
+    uniqueID: 2402381985
+    locked: 0
+  - name: GamePlay
+    uniqueID: 2046041939
+    locked: 0
+  - name: Effects
+    uniqueID: 679166577
+    locked: 0

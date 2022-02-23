@@ -35,7 +35,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) //fire bullet
+        if (Input.GetKeyDown (KeyCode.Space)) //fire bullet
         {
             gameObject.GetComponent<AudioSource>().Play();
             //Instantiate and start first bullet position

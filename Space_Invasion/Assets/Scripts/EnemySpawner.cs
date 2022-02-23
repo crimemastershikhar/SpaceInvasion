@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject EnemyGO; //Enemy Prefab
-    public float maxSpawnRateInSeconds = 5f;
+    public float maxSpawnRateInSeconds = 1f;
     private void Start()
     {
     }
@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     void ScheduleNextEnemySpawn()
     {
         float spawnInSeconds;
-        if (maxSpawnRateInSeconds > 1f)
+        if (maxSpawnRateInSeconds >= 1f)
         {
             spawnInSeconds = Random.Range(1f, maxSpawnRateInSeconds); //picking a no. b/w 1 and maxspawnrateinseconds
         }
@@ -33,12 +33,12 @@ public class EnemySpawner : MonoBehaviour
     {
         if (maxSpawnRateInSeconds > 1f)
             maxSpawnRateInSeconds--;
-        if (maxSpawnRateInSeconds == 1f)
+        if (maxSpawnRateInSeconds == 0.5f)
             CancelInvoke("IncreaseSpawnRate");
     }
     public void ScheduleEnemySpawner() //startenemyspawn
     {
-        maxSpawnRateInSeconds = 5f; //Reset spawnrate
+        maxSpawnRateInSeconds = 1f; //Reset spawnrate
         Invoke("SpawnEnemy", maxSpawnRateInSeconds);
         InvokeRepeating("IncreaseSpawnRate", 0f, 50f);
     }
