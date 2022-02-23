@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlanetController : MonoBehaviour
 {
-    public GameObject[] Planets; //Array of PlanetsGO prefab
+    public GameObject[] Planets; 
 
     Queue<GameObject> avaialblePlanets = new Queue<GameObject>(); 
     private void Start()
