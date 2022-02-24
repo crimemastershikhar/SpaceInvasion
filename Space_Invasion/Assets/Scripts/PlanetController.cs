@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlanetController : MonoBehaviour
 {
-    public GameObject[] Planets; //Array of PlanetsGO prefab
+    public GameObject[] Planets; 
 
-    Queue<GameObject> avaialblePlanets = new Queue<GameObject>(); //Queue to hold game objects
+    Queue<GameObject> avaialblePlanets = new Queue<GameObject>(); 
     private void Start()
     {//Adding planets to Queue
         avaialblePlanets.Enqueue(Planets[0]);
         avaialblePlanets.Enqueue(Planets[1]);
         avaialblePlanets.Enqueue(Planets[2]);
-        InvokeRepeating("MovePlanetDown", 0, 20f); //Call move planet down every 20 seconds
+        InvokeRepeating("MovePlanetDown", 0, 20f); 
     }
     void MovePlanetDown()
     {
@@ -20,17 +20,17 @@ public class PlanetController : MonoBehaviour
         if(avaialblePlanets.Count == 0)
             return;
 
-            GameObject aPlanet = avaialblePlanets.Dequeue(); //Get a planet from queue
-            aPlanet.GetComponent<Planet>().isMoving = true; //Set planet flag to true
+            GameObject aPlanet = avaialblePlanets.Dequeue(); 
+            aPlanet.GetComponent<Planet>().isMoving = true; 
     }
-    void EnqueuePlanets() //func to enqueu planets that are below screen and not moving
+    void EnqueuePlanets() 
     {
         foreach(GameObject aPlanet in Planets)
         {
-            if((aPlanet.transform.position.y < 0) && (!aPlanet.GetComponent<Planet>().isMoving)) //if planet is below screen and not moving
+            if((aPlanet.transform.position.y < 0) && (!aPlanet.GetComponent<Planet>().isMoving)) 
             {
                 aPlanet.GetComponent<Planet>().ResetPosition();
-                avaialblePlanets.Enqueue(aPlanet); //Enqueu the planet
+                avaialblePlanets.Enqueue(aPlanet); 
             }
         }
 

@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject scoreUITextGO;
     public GameObject TimeCounterGO;
     public GameObject GameTitileGO;
-    public GameObject ShootButton; // FOR ANDROID
+    public GameObject ShootButton; 
 
     public enum GameManagerState
     {
@@ -30,31 +30,31 @@ public class GameManager : MonoBehaviour
         switch (GMState)
         {
             case GameManagerState.Opening:
-                playButton.SetActive(true);//Set Play button visible
-                GameOverGo.SetActive(false); //Hiding gameover screen
-                GameTitileGO.SetActive(true); //DIsplay game title
+                playButton.SetActive(true);
+                GameOverGo.SetActive(false); 
+                GameTitileGO.SetActive(true); 
                 break;
 
             case GameManagerState.GamePlay:
                 playButton.SetActive(false);
-                GameTitileGO.SetActive(false); //Hide Game title 
+                GameTitileGO.SetActive(false);  
                 scoreUITextGO.GetComponent<GameScore>().Score = 0;
                 playerShip.GetComponent<PlayerControl>().Init();
                 enemySpawner.GetComponent<EnemySpawner>().ScheduleEnemySpawner();
-                TimeCounterGO.GetComponent<TimeCounter>().StartTimeCounter(); //Start the time counter
-                ShootButton.SetActive(true); // FOR ANDROID
+                TimeCounterGO.GetComponent<TimeCounter>().StartTimeCounter(); 
+                ShootButton.SetActive(true); 
                 break;
 
             case GameManagerState.GameOver:
                 GameOverGo.SetActive(true);
-                enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner(); //stop enemy spawner
-                Invoke("ChangeToOpeningState", 4f);//change game managr state to openign state after 4 seconds
-                TimeCounterGO.GetComponent<TimeCounter>().StopTimeCounter(); //Stop time counter
-                ShootButton.SetActive(false); // FOR ANDROID
+                enemySpawner.GetComponent<EnemySpawner>().UnscheduleEnemySpawner(); 
+                Invoke("ChangeToOpeningState", 4f);
+                TimeCounterGO.GetComponent<TimeCounter>().StopTimeCounter();
+                ShootButton.SetActive(false); 
                 break;
         }
     }
-    public void SetGameManagerState(GameManagerState state)//Funct to set game manager state
+    public void SetGameManagerState(GameManagerState state)
     {
         GMState = state;
         UpdateGameManagerState();

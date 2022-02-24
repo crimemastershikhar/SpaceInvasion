@@ -33,9 +33,9 @@ public class EnemyControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void PlayExplosion() //Instantiate explosion effect
+    void PlayExplosion() 
     {
         GameObject explosion = (GameObject)Instantiate(ExplosionGO);
-        explosion.transform.position = transform.position; //Set position of explosion
+        explosion.transform.position = transform.position; 
     }
 }
