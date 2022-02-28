@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
-    public float speed;
-    public bool isMoving;
-    Vector2 min;
-    Vector2 max;
+    [SerializeField] private float speed;
+    [SerializeField] private bool isMoving;
+    private Vector2 min;
+    private Vector2 max;
     private void Awake()
     {
         isMoving = false;
