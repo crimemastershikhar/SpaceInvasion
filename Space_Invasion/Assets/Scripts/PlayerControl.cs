@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
-    public GameObject PlayerBulletGO;
-    public GameObject GameManagerGO;
-    public GameObject BulletPosition01;
-    public GameObject BulletPosition02 ;
-    public float speed;
-    public GameObject ExplosionGO;
-    public GameObject ExplosionPlayerGO;
-    public Text LivesUIText; 
+    [SerializeField] private GameObject PlayerBulletGO;
+    [SerializeField] private GameManagerGO;
+    [SerializeField] private BulletPosition01;
+    [SerializeField] private BulletPosition02 ;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject ExplosionGO;
+    [SerializeField] private GameObject ExplosionPlayerGO;
+    [SerializeField] private Text LivesUIText; 
     const int MaxLives = 3; 
-    int Lives; 
+    private int Lives; 
 
     public void Init()
     {
