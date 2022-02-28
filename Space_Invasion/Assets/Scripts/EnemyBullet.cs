@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    float speed;
+    [SerializeField] private float speed;
     Vector2 _direction; 
-    bool isReady; 
+    private bool isReady; 
     private void Awake()
     {
         speed = 5f;
