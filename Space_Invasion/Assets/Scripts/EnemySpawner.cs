@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject EnemyGO; 
-    public float maxSpawnRateInSeconds = 1f;
+    [SerializeField] private GameObject EnemyGO; 
+    [SerializeField] private float maxSpawnRateInSeconds = 1f;
     private void Start()
     {
     }
