@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyGun : MonoBehaviour
 {
-    public GameObject EnemyBulletGO;
+    [SerializeField] private GameObject EnemyBulletGO;
     private void Start()
     {
         Invoke("FireEnemyBullet", 1f);
