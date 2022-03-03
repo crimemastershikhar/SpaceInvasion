@@ -5,14 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     //Refrence to our game objects
-    public GameObject playButton;
-    public GameObject playerShip;
-    public GameObject enemySpawner;
-    public GameObject GameOverGo;
-    public GameObject scoreUITextGO;
-    public GameObject TimeCounterGO;
-    public GameObject GameTitileGO;
-    public GameObject ShootButton; 
+    [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject playerShip;
+    [SerializeField] private GameObject enemySpawner;
+    [SerializeField] private GameObject GameOverGo;
+    [SerializeField] private GameObject scoreUITextGO;
+    [SerializeField] private GameObject TimeCounterGO;
+    [SerializeField] private GameObject GameTitileGO;
+    [SerializeField] private GameObject ShootButton; 
 
     public enum GameManagerState
     {

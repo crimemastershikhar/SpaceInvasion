@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class StarGenerator : MonoBehaviour
 {
-    public GameObject StarGO;
-    public int MaxStars;
+    [SerializeField] private GameObject StarGO;
+    [SerializeField] private int MaxStars;
 
     Color[] starColors =
     {

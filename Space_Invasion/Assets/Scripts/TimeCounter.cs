@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class TimeCounter : MonoBehaviour
 {
-    Text timeUI;
-    float startTime;
-    float ellapsedTime;
-    bool startCounter;
-    int minutes;
-    int seconds;
+    [SerializeField] private Text timeUI;
+    [SerializeField] private float startTime;
+    [SerializeField] private float ellapsedTime;
+    private bool startCounter;
+    private int minutes;
+    private int seconds;
+    
     private void Start()
     {
         startCounter = false;

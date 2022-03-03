@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayerBulletGO;
-    [SerializeField] private GameObject GameManagerGO;
-    [SerializeField] private GameObject BulletPosition01;
-    [SerializeField] private GameObject BulletPosition02 ;
-    [SerializeField] private float speed;
-    [SerializeField] private GameObject ExplosionGO;
-    [SerializeField] private GameObject ExplosionPlayerGO;
-    [SerializeField] private Text LivesUIText; 
+    public GameObject PlayerBulletGO;
+    public GameObject GameManagerGO;
+    public GameObject BulletPosition01;
+    public GameObject BulletPosition02 ;
+    public float speed;
+    public GameObject ExplosionGO;
+    public GameObject ExplosionPlayerGO;
+    public Text LivesUIText; 
     const int MaxLives = 3; 
     private int Lives; 
 

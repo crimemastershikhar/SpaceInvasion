@@ -387,7 +387,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &241974389
@@ -816,7 +816,7 @@ MonoBehaviour:
   speed: 8
   ExplosionGO: {fileID: 4987483781531169270, guid: e19067c51001a7f4bb17c9b851006070,
     type: 3}
-  ExplosionPlayerGO: {fileID: 1981774452263784, guid: 69bc9de1566254e4db3ef4d734a7fbcd,
+  ExplosionPlayerGO: {fileID: 847772622521503396, guid: a7b2f11be804dfb46994d2c0f462e661,
     type: 3}
   LivesUIText: {fileID: 845402390}
 --- !u!61 &688528020
