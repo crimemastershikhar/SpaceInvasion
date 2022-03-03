@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyControl : MonoBehaviour
 {
-    float speed;
-    public GameObject ExplosionGO;
-    GameObject scoreUITextGo;
+    private float speed;
+    [SerializeField] private GameObject ExplosionGO;
+    [SerializeField] GameObject scoreUITextGo;
     private void Start()
     {
         speed = 2f;

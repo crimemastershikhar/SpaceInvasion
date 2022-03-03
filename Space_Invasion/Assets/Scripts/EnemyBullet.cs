@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    float speed;
-    Vector2 _direction; 
-    bool isReady; 
+    [SerializeField] private float speed;
+    private Vector2 _direction; 
+    private bool isReady; 
     private void Awake()
     {
-        speed = 5f;
         isReady = false;
     }
     public void SetDirection(Vector2 direction) 
